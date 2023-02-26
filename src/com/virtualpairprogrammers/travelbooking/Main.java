@@ -2,6 +2,7 @@ package com.virtualpairprogrammers.travelbooking;
 
 import com.virtualpairprogrammers.travelbooking.domain.BusTicket;
 import com.virtualpairprogrammers.travelbooking.domain.TrainTicket;
+import com.virtualpairprogrammers.travelbooking.domain.TravelTicket;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -18,6 +19,8 @@ public class Main {
         BusTicket busTicket = new BusTicket(125L,"London","Edinburgh", new BigDecimal("59.00"), LocalDateTime.of(2023,3,7,16,3), LocalDateTime.of(2023,3,7,19,3), providers);
         trainTicket2.cancel();
         busTicket.cancel();
+
+        // TravelTicket travelTicket = new TravelTicket();
 
     }
 }

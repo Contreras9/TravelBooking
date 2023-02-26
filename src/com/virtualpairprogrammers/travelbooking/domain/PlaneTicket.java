@@ -45,6 +45,7 @@ public class PlaneTicket extends TravelTicket{
     }
 
     public void upgrade() {
+        super.setPrice(getPrice().multiply(new BigDecimal("2")));
         System.out.println("You have been upgraded!");
     }
 

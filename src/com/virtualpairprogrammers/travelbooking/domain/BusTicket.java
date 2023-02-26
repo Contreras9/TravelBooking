@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+// Java-11 new feature to declare child class with some restriction
+// public sealed class BusTicket extends TravelTicket {}
+
 public class BusTicket extends TravelTicket{
 
     private String[] permittedProviders;
