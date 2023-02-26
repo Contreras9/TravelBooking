@@ -2,6 +2,7 @@ package com.virtualpairprogrammers.travelbooking.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class PlaneTicket extends TravelTicket{
 
@@ -52,5 +53,28 @@ public class PlaneTicket extends TravelTicket{
     public void addStopOvers() {
         stopOvers++;
         System.out.println("You have " + stopOvers + "stopovers.");
+    }
+
+    @Override
+    public String toString() {
+        return "PlaneTicket{" +
+                "travelClass=" + travelClass +
+                ", seatNumber=" + seatNumber +
+                ", stopOvers=" + stopOvers +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PlaneTicket that = (PlaneTicket) o;
+        return Objects.equals(travelClass, that.travelClass) && Objects.equals(seatNumber, that.seatNumber) && Objects.equals(stopOvers, that.stopOvers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), travelClass, seatNumber, stopOvers);
     }
 }
