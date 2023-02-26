@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class TrainTicket extends TravelTicket{
 
-    private Integer travelClass;
+    private TravelClass travelClass;
     private Integer cartNumber;
     private Integer seatNumber;
 
@@ -14,18 +14,18 @@ public class TrainTicket extends TravelTicket{
         super();
     }
 
-    public TrainTicket(Long bookingRef, String origin, String destination, BigDecimal price, LocalDateTime departureTime, LocalDateTime arrivalTime, Integer travelClass, Integer cartNumber, Integer seatNumber) {
+    public TrainTicket(Long bookingRef, String origin, String destination, BigDecimal price, LocalDateTime departureTime, LocalDateTime arrivalTime, TravelClass travelClass, Integer cartNumber, Integer seatNumber) {
         super(bookingRef, origin, destination, price, departureTime, arrivalTime);
         this.travelClass = travelClass;
         this.cartNumber = cartNumber;
         this.seatNumber = seatNumber;
     }
 
-    public Integer getTravelClass() {
+    public TravelClass getTravelClass() {
         return travelClass;
     }
 
-    public void setTravelClass(Integer travelClass) {
+    public void setTravelClass(TravelClass travelClass) {
         this.travelClass = travelClass;
     }
 
@@ -46,8 +46,8 @@ public class TrainTicket extends TravelTicket{
     }
 
     public void upgrade() {
-        if (travelClass != 1) {
-            travelClass = 1;
+        if (travelClass != TravelClass.FIRST) {
+            travelClass = TravelClass.FIRST;
             System.out.println("You have been upgrade!");
         }
         else {
